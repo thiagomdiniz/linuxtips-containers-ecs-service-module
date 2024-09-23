@@ -117,3 +117,9 @@ variable "scale_in_cooldown" {}
 # Tracking CPU
 
 variable "scale_tracking_cpu" {}
+
+# Tracking Requests
+
+variable "alb_arn" {}
+
+variable "scale_tracking_requests" {}
