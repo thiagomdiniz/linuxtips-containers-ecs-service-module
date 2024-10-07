@@ -54,8 +54,15 @@ variable "service_healthcheck" {
 }
 
 variable "service_launch_type" {
-  type        = string
-  description = "Tipo de lançamento para o serviço no ECS, como 'FARGATE' ou 'EC2'."
+  type = list(object({
+    capacity_provider = string
+    weight            = number
+  }))
+  description = "Configuração dos Launch Types pelos capacity providers disponíveis no cluster."
+  default = [{
+    capacity_provider = "FARGATE"
+    weight            = 100
+  }]
 }
 
 variable "service_task_count" {
