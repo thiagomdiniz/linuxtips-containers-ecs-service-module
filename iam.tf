@@ -39,6 +39,8 @@ resource "aws_iam_role_policy" "service_execution_role" {
           "ecr:BatchGetImage",
           "logs:CreateLogStream",
           "logs:PutLogEvents",
+          "ssm:GetParameters",
+          "secretsmanager:GetSecretValue",
         ],
         Resource = "*",
         Effect   = "Allow"

@@ -81,8 +81,21 @@ variable "service_hosts" {
 }
 
 variable "environment_variables" {
-  type        = list(map(string))
+  type = list(object({
+    name : string
+    value : string
+  }))
   description = "Lista de variáveis de ambiente que serão passadas para o serviço."
+  default     = []
+}
+
+variable "secrets" {
+  type = list(object({
+    name : string
+    valueFrom : string
+  }))
+  description = "Lista de secrets do parameter store ou do secrets manager."
+  default     = []
 }
 
 variable "capabilities" {
