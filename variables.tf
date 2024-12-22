@@ -100,6 +100,7 @@ variable "secrets" {
 
 variable "capabilities" {
   type        = list(string)
+  default     = []
   description = "Lista de capacidades necessárias para a execução do serviço, como 'CAP_SYS_ADMIN' para recursos Linux específicos."
 }
 
@@ -239,4 +240,9 @@ variable "efs_volumes" {
   }))
   description = "Volumes EFS existentes para serem montados nas tasks do ECS."
   default     = []
+}
+
+variable "service_discovery_namespace" {
+  description = "Namespace ID do Service Discovery"
+  default     = null
 }
