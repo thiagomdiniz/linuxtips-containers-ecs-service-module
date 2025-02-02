@@ -40,28 +40,33 @@ variable "use_lb" {
 }
 
 variable "service_protocol" {
-  type    = string
-  default = null
+  type        = string
+  default     = null
+  description = "Protocolo de serviço utilizado, como http, https, grpc ou tcp."
 }
 
 variable "protocol" {
-  type    = string
-  default = "tcp"
+  type        = string
+  default     = "tcp"
+  description = "Protocolo a ser usado nas comunicações, como tcp ou udp."
 }
 
 variable "use_service_connect" {
-  type    = bool
-  default = false
+  type        = bool
+  default     = false
+  description = "Habilita ou desabilita o uso do Service Connect."
 }
 
 variable "service_connect_name" {
-  type    = string
-  default = null
+  type        = string
+  default     = null
+  description = "Nome do Service Connect."
 }
 
 variable "service_connect_arn" {
-  type    = string
-  default = null
+  type        = string
+  default     = null
+  description = "ARN do Service Connect."
 }
 
 variable "deployment_controller" {
